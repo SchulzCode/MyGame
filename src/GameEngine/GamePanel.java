@@ -26,7 +26,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     int FPS = 60;
 
-    int test =123;
+    int test =1234;
 
 
     public GamePanel(){
