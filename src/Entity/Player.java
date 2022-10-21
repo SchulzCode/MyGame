@@ -63,10 +63,15 @@ public class Player extends Entity{
                 direction = "left";
                 x -= speed;
             }
-            else {
+            else if (keyH.rightPressed){
                 direction = "right";
                 x += speed;
             }
+
+            else if (keyH.escapePressed) {
+                System.exit(0);
+            }
+
             spriteCounter++;
             if(spriteCounter > 13){
                 if(spriteNum == 1){

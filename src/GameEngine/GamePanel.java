@@ -18,6 +18,12 @@ public class GamePanel extends JPanel implements Runnable {
     final int screenWidth = tileSize * maxScreenCol;
     final int screenHeight = tileSize * maxScreenRow;
 
+    public final int worldX = 0;
+
+    public final int worldY = 0;
+
+    public final int test = 0;
+
     Thread gameThread;
     KeyHandler keyH = new KeyHandler();
 
@@ -33,6 +39,8 @@ public class GamePanel extends JPanel implements Runnable {
         this.setDoubleBuffered(true);
         this.addKeyListener(keyH);
         this.setFocusable(true);
+        
+
     }
 
     public void startGameThread(){
