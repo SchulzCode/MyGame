@@ -22,7 +22,6 @@ public class GamePanel extends JPanel implements Runnable {
 
     public final int worldY = 0;
 
-    public final int test = 0;
 
     Thread gameThread;
     KeyHandler keyH = new KeyHandler();
