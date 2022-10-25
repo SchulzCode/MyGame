@@ -21,7 +21,7 @@ public class TileManager {
         tile = new Tile[10];
         mapTileNumber = new int[gamePanel.maxScreenCol][gamePanel.maxScreenRow];
         getTileImage();
-        loadMap("maps/worldmap0.txt");
+        loadMap("maps/world01.txt");
     }
 
     public void getTileImage(){
@@ -44,6 +44,8 @@ public class TileManager {
 
             tile[5] = new Tile();
             tile[5].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("tiles/earth.png")));
+
+
 
         }catch (IOException e){
             e.printStackTrace();
@@ -103,4 +105,5 @@ public class TileManager {
             }
         }
     }
+
 }
