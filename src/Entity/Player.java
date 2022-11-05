@@ -26,6 +26,9 @@ public class Player extends Entity{
             direction = "down";
             screenX = gamePanel.screenWidth/2 -(gamePanel.tileSize/2);
             screenY = gamePanel.screenHeight/2-(gamePanel.tileSize/2);
+
+            collisionArea = new Rectangle(10,16,32,32);
+
         }
         public void setDefaultValues(){
             worldX = gamePanel.tileSize*23;
@@ -60,24 +63,32 @@ public class Player extends Entity{
 
             if (keyH.upPressed){
                 direction = "up";
-                worldY -= speed;
             }
             else if (keyH.downPressed){
                 direction = "down";
-                worldY += speed;
             }
             else if (keyH.leftPressed){
                 direction = "left";
-                worldX -= speed;
             }
             else if (keyH.rightPressed){
                 direction = "right";
-                worldX += speed;
             }
-
             else if (keyH.escapePressed) {
                 System.exit(0);
             }
+
+            collisionOn = false;
+            gamePanel.collsionCheck.checkTileforCollision(this);
+
+            if(!collisionOn){
+                switch (direction) {
+                    case "up" -> worldY -= speed;
+                    case "down" -> worldY += speed;
+                    case "left" -> worldX -= speed;
+                    case "right" -> worldX += speed;
+                }
+            }
+
 
             spriteCounter++;
             if(spriteCounter > 13){
